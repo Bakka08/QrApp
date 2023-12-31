@@ -1,0 +1,256 @@
+{
+  "info": {
+    "_postman_id": "5ef424e3-4241-4d5d-a301-5cfc5e5b7d1d",
+    "name": "Demo API Tests",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Identify API Tests",
+      "item": [
+        {
+          "name": "Signup Test",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"testuser\",\n  \"email\": \"test@example.com\",\n  \"password\": \"password\"\n}"
+            },
+            "url": {
+              "raw": "http://192.168.1.104:9776/users/signup",
+              "protocol": "http",
+              "host": [
+                "192.168.1.104"
+              ],
+              "port": "9776",
+              "path": [
+                "users",
+                "signup"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login Test",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"test@example.com\",\n  \"password\": \"password\"\n}"
+            },
+            "url": {
+              "raw": "http://192.168.1.104:9776/users/login",
+              "protocol": "http",
+              "host": [
+                "192.168.1.104"
+              ],
+              "port": "9776",
+              "path": [
+                "users",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Password Test",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userId\": 1,\n  \"oldpassword\": \"oldpassword\",\n  \"newpassword\": \"newpassword\"\n}"
+            },
+            "url": {
+              "raw": "http://192.168.1.104:9776/users/updatePassword",
+              "protocol": "http",
+              "host": [
+                "192.168.1.104"
+              ],
+              "port": "9776",
+              "path": [
+                "users",
+                "updatePassword"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "QR Operations API Tests",
+      "item": [
+        {
+          "name": "Scan Test",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"data\": \"scan-data\"\n}"
+            },
+            "url": {
+              "raw": "http://192.168.1.104:9776/qrcodes/scan",
+              "protocol": "http",
+              "host": [
+                "192.168.1.104"
+              ],
+              "port": "9776",
+              "path": [
+                "qrcodes",
+                "scan"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Generate Test",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"data\": \"generate-data\"\n}"
+            },
+            "url": {
+              "raw": "http://192.168.1.104:9776/qrcodes/generate",
+              "protocol": "http",
+              "host": [
+                "192.168.1.104"
+              ],
+              "port": "9776",
+              "path": [
+                "qrcodes",
+                "generate"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get QRCode Test",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"QrId\": 1\n}"
+            },
+            "url": {
+              "raw": "http://192.168.1.104:9776/qrcodes/get",
+              "protocol": "http",
+              "host": [
+                "192.168.1.104"
+              ],
+              "port": "9776",
+              "path": [
+                "qrcodes",
+                "get"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "History API Tests",
+      "item": [
+        {
+          "name": "Get All History Test",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userId\": 1\n}"
+            },
+            "url": {
+              "raw": "http://192.168.1.104:9776/history/getall",
+              "protocol": "http",
+              "host": [
+                "192.168.1.104"
+              ],
+              "port": "9776",
+              "path": [
+                "history",
+                "getall"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Save History Test",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"qrCodeId\": 1,\n  \"userId\": 1,\n  \"action\": \"test-action\"\n}"
+            },
+            "url": {
+              "raw": "http://192.168.1.104:9776/history/save",
+              "protocol": "http",
+              "host": [
+                "192.168.1.104"
+              ],
+              "port": "9776",
+              "path": [
+                "history",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
